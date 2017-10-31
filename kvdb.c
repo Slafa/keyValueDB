@@ -71,12 +71,11 @@ void setupNodes(char **pArr, int size, NODE *root) {
         NODE *lastNode;
         for (int i = 0; i < size; ++i) {
             lastNode = root;
-            //word = malloc(sizeof(pArr[i]));
-            //printf("%d testtezt : ", sizeof(&pArr[i]));
-
             char *deli = ". ";
             word = strtok(pArr[i], deli);
             temp = word;
+            int pnNodesSize;
+
             while (strcmp(word, "=") != 0) {
                 if (root->pnNodes == NULL) {
                     root->pnNodes = malloc(sizeof(NODE));
@@ -84,28 +83,29 @@ void setupNodes(char **pArr, int size, NODE *root) {
                     lastNode = &root->pnNodes[0];
                 } else {
                     bool nameExist = false;
+                    pnNodesSize = 0;
 
                     foreach(NODE *node, lastNode->pnNodes) {
+                            //set last node to the current if it exist
                             if (strcmp(node->pszName, temp) == 0) {
                                 nameExist = true;
                                 lastNode = node;
                             }
+                            pnNodesSize++;
                         }
+
+                    //create a new node if not exist and set the last node to the new one
                     if (nameExist == false) {
-                        lastNode->pnNodes = malloc(sizeof(NODE));
-                        lastNode->pnNodes[0] = createNode(temp);
-                        lastNode = &lastNode->pnNodes[0];
-                    }//todo fix if node exist
-                    //printf("\n\nnodeName : \n%s\n", lastNode->pnNodes[0].pszName);
+                            lastNode->pnNodes = malloc(sizeof(lastNode->pnNodes)+sizeof(NODE));
+                            lastNode->pnNodes[pnNodesSize] = createNode(temp);
+                            lastNode = &lastNode->pnNodes[pnNodesSize];
+                    }
                     word = strtok(NULL, deli);
                     temp = word;
                 }
             }
-            //puts(word);
             word = strtok(NULL,"\0");
-            //puts(word);
-            //char *buffer = malloc(sizeof(char));
-//printf("grr  %c", word[0]);
+            //sets the value of the node if its the last one
             if(word[0] == '"'){
                 temp = strtok(word,"\"");
                 lastNode->pszString = malloc(sizeof(temp));
