@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/glenn/EXAMEN/kvdb.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+kvh.h
+/home/glenn/EXAMEN/kvh.h
+
+/home/glenn/EXAMEN/kvh.h
+

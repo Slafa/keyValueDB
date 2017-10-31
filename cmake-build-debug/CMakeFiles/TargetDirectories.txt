@@ -1,0 +1,3 @@
+/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/EXAMEN.dir
