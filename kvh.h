@@ -23,7 +23,7 @@ typedef struct NODE{
         int getType(char*);
         struct NODE createNode(char *name);
         void setupNodes(char **pArr, int size, NODE *root );
-        void printAllNodes(NODE * this);
+        void printAllNodes(NODE * this, char *folderName);
 
 
 

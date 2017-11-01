@@ -62,7 +62,8 @@ int main(int argc, char *fileAdress[]) {
 
     setupNodes(lines, lineCounter, &root);
 puts("\n");
-    printAllNodes(&root);
+    //puts(root.pszName);
+    printAllNodes(&root, root.pszName);
     return 0;
 }
 
@@ -146,32 +147,31 @@ struct NODE createNode(char *name) {
     return new;
 }
 
-void printAllNodes(NODE * this){
-    if(this->pnNodeCounter != -1){
-        //puts("\nkommer jeg hit?");
-       // printf("%s", this->pszName);
+void printAllNodes(NODE * this, char *folderName){
 
+    char * pfolderName;
+    pfolderName = malloc(sizeof(char)*strlen(folderName));
+
+    if(this->pnNodeCounter != -1){
 
         for (int i = 0; i <= this->pnNodeCounter; i++) {
-            printf("%s", this->pszName);
-            //printf("%s", this->pnNodes[i].pszName);
-            //puts(this->pnNodes[i].pszName);
-            if(this->pnNodes[i].pnNodeCounter != -1){
-                printf(".");
-            }
-            printAllNodes(&this->pnNodes[i]);
 
+            pfolderName = realloc(pfolderName,sizeof(char)*(strlen(folderName) * strlen(this->pnNodes[i].pszName)+2));
+            strcpy(pfolderName, folderName);
+
+            strcat(pfolderName, ".");
+            strcat(pfolderName, this->pnNodes[i].pszName);
+
+            printAllNodes(&this->pnNodes[i],pfolderName);
         }
 
     } else{
 
-        printf(".%s",this->pszName);
         if(this->pszString != NULL){
-            printf(" = %s", this->pszString);
+            printf("%s = %s\n",folderName, this->pszString);
         }else{
-            printf(" = %lu", this->ulIntVal);
+            printf("%s = %lu\n",folderName, this->ulIntVal);
         }
-        puts("");
 
     }
 
