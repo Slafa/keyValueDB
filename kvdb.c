@@ -61,6 +61,8 @@ int main(int argc, char *fileAdress[]) {
     //printf("\n\ntest : %d \n", (int) (sizeof(&lines) / sizeof(char)));
 
     setupNodes(lines, lineCounter, &root);
+puts("\n");
+    printAllNodes(&root);
     return 0;
 }
 
@@ -74,51 +76,55 @@ void setupNodes(char **pArr, int size, NODE *root) {
             char *deli = ". ";
             word = strtok(pArr[i], deli);
             temp = word;
-            int pnNodesSize;
+
 
             while (strcmp(word, "=") != 0) {
-                if (root->pnNodes == NULL) {
-                    root->pnNodes = malloc(sizeof(NODE));
-                    root->pnNodes[0] = createNode(temp);
-                    lastNode = &root->pnNodes[0];
+                if (lastNode->pnNodeCounter == -1) {
+                    lastNode->pnNodes = calloc(1, sizeof(NODE));
+                    lastNode->pnNodes[0] = createNode(temp);
+                    lastNode->pnNodeCounter++;
+                    lastNode = &lastNode->pnNodes[root->pnNodeCounter];
                 } else {
-                    bool nameExist = false;
-                    pnNodesSize = 0;
 
-                    foreach(NODE *node, lastNode->pnNodes) {
-                            //set last node to the current if it exist
-                            if (strcmp(node->pszName, temp) == 0) {
-                                nameExist = true;
-                                lastNode = node;
-                            }
-                            pnNodesSize++;
+
+                    //set last node to the current if it exist
+                    for (int j = 0; j <= lastNode->pnNodeCounter; j++) {
+
+                        if (strcmp(lastNode->pnNodes[j].pszName, temp) == 0) {
+                            lastNode = &lastNode->pnNodes[j];
+                            word = strtok(NULL, deli);
+                            temp = word;
+                            continue;
                         }
-
-                    //create a new node if not exist and set the last node to the new one
-                    if (nameExist == false) {
-                            lastNode->pnNodes = malloc(sizeof(lastNode->pnNodes)+sizeof(NODE));
-                            lastNode->pnNodes[pnNodesSize] = createNode(temp);
-                            lastNode = &lastNode->pnNodes[pnNodesSize];
                     }
-                    word = strtok(NULL, deli);
-                    temp = word;
+
+                    //increase the size of node array, place a new node into it,
+                    //and set last node to the new node.
+
+                    lastNode->pnNodes = realloc(lastNode->pnNodes, sizeof(NODE)*(lastNode->pnNodeCounter+2));
+                    lastNode->pnNodes[++lastNode->pnNodeCounter] = createNode(temp);
+                    //lastNode = &lastNode->pnNodes[lastNode->pnNodeCounter];
                 }
+
+                word = strtok(NULL, deli);
+                temp = word;
             }
-            word = strtok(NULL,"\0");
+
+            word = strtok(NULL, "\0");
             //sets the value of the node if its the last one
-            if(word[0] == '"'){
-                temp = strtok(word,"\"");
+            if (word[0] == '"') {
+                temp = strtok(word, "\"");
                 lastNode->pszString = malloc(sizeof(temp));
                 lastNode->pszString = temp;
-                printf("\nSTRING VALUE - %s : %s",lastNode->pszName,lastNode->pszString);
+                printf("\nSTRING VALUE - %s : %s", lastNode->pszName, lastNode->pszString);
 
-            } else{
+            } else {
                 lastNode->ulIntVal = (ULONG) atoi(word);
-                printf("\nNUM VALUE - %s : %lu",lastNode->pszName,lastNode->ulIntVal);
+                printf("\nNUM VALUE - %s : %lu", lastNode->pszName, lastNode->ulIntVal);
             }
         }
+        }
     }
-}
 
 
 struct NODE createNode(char *name) {
@@ -126,7 +132,39 @@ struct NODE createNode(char *name) {
     new.pszName = strdup(name);
     new.pnNodes = NULL;
     new.pszString = NULL;
+    new.pnNodeCounter = -1;
     return new;
+}
+
+void printAllNodes(NODE * this){
+    if(this->pnNodeCounter != -1){
+        //puts("\nkommer jeg hit?");
+        //printf("%s", this->pszName);
+
+
+        for (int i = 0; i <= this->pnNodeCounter; i++) {
+            printf("%s", this->pszName);
+            //printf("%s", this->pnNodes[i].pszName);
+            //puts(this->pnNodes[i].pszName);
+            if(this->pnNodes[i].pnNodeCounter != -1){
+                printf(".");
+            }
+            printAllNodes(&this->pnNodes[i]);
+
+        }
+
+    } else{
+
+        //printf("%s",this->pszName);
+        if(this->pszString != NULL){
+            printf(" = %s", this->pszString);
+        }else{
+            printf(" = %lu", this->ulIntVal);
+        }
+        puts("");
+
+    }
+
 }
 
 

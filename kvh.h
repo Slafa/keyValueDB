@@ -13,7 +13,8 @@ typedef struct NODE{
     char *pszName; //this node name.
     ULONG ulIntVal; //if this node value is an int
     char *pszString; //if this node value is a string
-    struct NODE *pnNodes; //pekere til undernoder(kataloger)
+    int pnNodeCounter; //hold number of indexes in pnNodes, if -1 pnNodes == NULL
+    struct NODE *pnNodes; //pointer to subnodes(catalogs)
 } NODE;
         void setInt();
         int getInt(char*);
@@ -22,14 +23,8 @@ typedef struct NODE{
         int getType(char*);
         struct NODE createNode(char *name);
         void setupNodes(char **pArr, int size, NODE *root );
+        void printAllNodes(NODE * this);
 
-#define foreach(item, array) \
-    for(int keep = 1, \
-            count = 0,\
-            size = sizeof (array) / sizeof *(array); \
-        keep && count != size; \
-        keep = !keep, count++) \
-      for(item = (array) + count; keep; keep = !keep)
 
 
 
