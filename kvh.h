@@ -6,8 +6,23 @@
 #define EXAMEN_KVH_H
 #define MAX_NODE 10
 
+
+
         typedef unsigned long ULONG;
-        typedef enum { false, true } bool;
+        typedef enum {
+            false,
+            true
+        } bool;
+
+        typedef enum {
+            intValue = 1,
+            stringValue = 2,
+            folder = 3,
+            nodeDontExist = -1,
+            wrongType = -2
+        } nodeType;
+
+
 
 typedef struct NODE{
     char *pszName; //this node name.
@@ -16,14 +31,15 @@ typedef struct NODE{
     int pnNodeCounter; //hold number of indexes in pnNodes, if -1 pnNodes == NULL
     struct NODE *pnNodes; //pointer to subnodes(catalogs)
 } NODE;
-        void setInt();
-        int getInt(char*);
-        void setString();
-        char* getString();
-        int getType(char*);
+        void setInt(ULONG intValue, NODE* this);
+        void* getInt(char* stringValue);
+        void setString(char * stringValue,NODE * this);
+        void* getString(char * stringValue);
         struct NODE createNode(char *name);
         void setupNodes(char **pArr, int size, NODE *root );
         void printAllNodes(NODE * this, char *folderName);
+        nodeType getType(char *keyValue);
+        NODE getNode(char* keyValue, NODE root);
 
 
 

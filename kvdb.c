@@ -3,6 +3,7 @@
 #include <string.h>
 #include "kvh.h"
 
+NODE root;
 
 int main(int argc, char *fileAdress[]) {
 
@@ -55,15 +56,25 @@ int main(int argc, char *fileAdress[]) {
     }
     fclose(pfile);
 
-    NODE root = createNode("root");
+    root = createNode("root");
     //root.pszName = "root";
     printf("\n\ntest : %d \n%s\n", lineCounter, root.pszName);
     //printf("\n\ntest : %d \n", (int) (sizeof(&lines) / sizeof(char)));
 
     setupNodes(lines, lineCounter, &root);
-puts("\n");
+    puts("\n");
     //puts(root.pszName);
+
     printAllNodes(&root, root.pszName);
+    puts("");
+    printf("%d\n", getType("config.update.interval"));
+    printf("%d\n", getType("config.update"));
+    printf("%d\n", getType("config.update.server1"));
+    printf("%d\n", getType("strings.no.header"));
+    printf("%d\n", getType("strins.no.header"));
+
+    puts("\n\n");
+    printf("%s", (char *) getString("config.update.interval"));
     return 0;
 }
 
@@ -124,18 +135,17 @@ void setupNodes(char **pArr, int size, NODE *root) {
             //sets the value of the node if its the last one
             if (word[0] == '"') {
                 temp = strtok(word, "\"");
-                lastNode->pszString = malloc(sizeof(temp));
-                lastNode->pszString = temp;
+                setString(temp, lastNode);
                 printf("\nSTRING VALUE - %s : %s", lastNode->pszName, lastNode->pszString);
 
             } else {
-                ULONG lol = (ULONG) atoi(word);
-                lastNode->ulIntVal = lol;
+                ULONG intValue = (ULONG) atoi(word);
+                setInt(intValue, lastNode);
                 printf("\nNUM VALUE - %s : %lu", lastNode->pszName, lastNode->ulIntVal);
             }
         }
-        }
     }
+}
 
 
 struct NODE createNode(char *name) {
@@ -147,34 +157,128 @@ struct NODE createNode(char *name) {
     return new;
 }
 
-void printAllNodes(NODE * this, char *folderName){
+void printAllNodes(NODE *this, char *folderName) {
 
-    char * pfolderName;
-    pfolderName = malloc(sizeof(char)*strlen(folderName));
+    char *pfolderName;
+    pfolderName = malloc(sizeof(char) * strlen(folderName));
 
-    if(this->pnNodeCounter != -1){
+    if (this->pnNodeCounter != -1) {
 
         for (int i = 0; i <= this->pnNodeCounter; i++) {
 
-            pfolderName = realloc(pfolderName,sizeof(char)*(strlen(folderName) * strlen(this->pnNodes[i].pszName)+2));
+            pfolderName = realloc(pfolderName,
+                                  sizeof(char) * (strlen(folderName) + strlen(this->pnNodes[i].pszName) + 2));
             strcpy(pfolderName, folderName);
 
             strcat(pfolderName, ".");
             strcat(pfolderName, this->pnNodes[i].pszName);
 
-            printAllNodes(&this->pnNodes[i],pfolderName);
+            printAllNodes(&this->pnNodes[i], pfolderName);
         }
 
-    } else{
+    } else {
 
-        if(this->pszString != NULL){
-            printf("%s = %s\n",folderName, this->pszString);
-        }else{
-            printf("%s = %lu\n",folderName, this->ulIntVal);
+        if (this->pszString != NULL) {
+            printf("%s = %s\n", folderName, this->pszString);
+        } else {
+            printf("%s = %lu\n", folderName, this->ulIntVal);
         }
 
     }
 
+}
+
+nodeType getType(char *keyValue) {
+
+    char keyValDup[strlen(keyValue + 1)];
+    char *delimeter = ". ";
+    char *word;
+    int counter = 0;
+    bool nodeExist = false;
+    NODE thisNode = root;
+
+
+    strcpy(keyValDup, keyValue);
+    word = strtok(keyValDup, delimeter);
+
+    while (word != NULL) {
+        nodeExist = false;
+        if (thisNode.pnNodeCounter != -1) {
+            for (int i = 0; i <= thisNode.pnNodeCounter; ++i) {
+                if (strcmp(thisNode.pnNodes[i].pszName, word) == 0) {
+                    thisNode = thisNode.pnNodes[i];
+                    nodeExist = true;
+                    continue;
+                }
+            }
+        }
+        counter++;
+        word = strtok(NULL, delimeter);
+
+    }
+    if (nodeExist != true) {
+        printf("%s", "ERROR = ");
+        return nodeDontExist;
+
+    } else if (thisNode.pnNodeCounter > -1) {
+        printf("%s", "FOLDER = ");
+        return folder;
+
+    } else if (thisNode.pszString != NULL) {
+        printf("%s", "STRING = ");
+        return stringValue;
+
+    } else {
+        printf("%s", "INT = ");
+        return intValue;
+    }
+
+}
+
+void setInt(ULONG intValue, NODE *this) {
+    this->ulIntVal = intValue;
+}
+
+void setString(char *stringValue, NODE *this) {
+    this->pszString = malloc(sizeof(stringValue));
+    this->pszString = stringValue;
+}
+
+void* getString (char* keyValue){
+    nodeType type=  getType(keyValue);
+
+    if (type == intValue){
+        return (void *) wrongType;
+    }else if (type == nodeDontExist){
+        return (void *) nodeDontExist;
+    }else {
+        return getNode(keyValue,root).pszString;
+    }
+}
+
+NODE getNode(char* keyValue, NODE root){
+    char keyValDup[strlen(keyValue + 1)];
+    char *delimeter = ". ";
+    char *word;
+    int counter = 0;
+    NODE thisNode = root;
+
+    strcpy(keyValDup, keyValue);
+    word = strtok(keyValDup, delimeter);
+
+    while (word != NULL) {
+        if (thisNode.pnNodeCounter != -1) {
+            for (int i = 0; i <= thisNode.pnNodeCounter; ++i) {
+                if (strcmp(thisNode.pnNodes[i].pszName, word) == 0) {
+                    thisNode = thisNode.pnNodes[i];
+                    continue;
+                }
+            }
+        }
+        counter++;
+        word = strtok(NULL, delimeter);
+    }
+    return thisNode;
 }
 
 
