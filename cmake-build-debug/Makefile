@@ -123,6 +123,33 @@ EXAMEN/fast:
 	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/build
 .PHONY : EXAMEN/fast
 
+getSet.o: getSet.c.o
+
+.PHONY : getSet.o
+
+# target to build an object file
+getSet.c.o:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/getSet.c.o
+.PHONY : getSet.c.o
+
+getSet.i: getSet.c.i
+
+.PHONY : getSet.i
+
+# target to preprocess a source file
+getSet.c.i:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/getSet.c.i
+.PHONY : getSet.c.i
+
+getSet.s: getSet.c.s
+
+.PHONY : getSet.s
+
+# target to generate assembly for a file
+getSet.c.s:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/getSet.c.s
+.PHONY : getSet.c.s
+
 kvdb.o: kvdb.c.o
 
 .PHONY : kvdb.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... EXAMEN"
+	@echo "... getSet.o"
+	@echo "... getSet.i"
+	@echo "... getSet.s"
 	@echo "... kvdb.o"
 	@echo "... kvdb.i"
 	@echo "... kvdb.s"

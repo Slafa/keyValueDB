@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/glenn/EXAMEN/getSet.c">
+			<Option target="EXAMEN"/>
+		</Unit>
 		<Unit filename="/home/glenn/EXAMEN/kvdb.c">
 			<Option target="EXAMEN"/>
 		</Unit>

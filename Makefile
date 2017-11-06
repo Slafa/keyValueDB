@@ -3,8 +3,8 @@ CFLAGS=-g -O0
 
 
 
-eksamen: kvdb.c kvh.h
-	$(CC) -o eksamen kvdb.c 
+eksamen: kvdb.c getSet.c kvh.h
+	$(CC) -o eksamen kvdb.c getSet.c 
 
 clean:
-	rm -f *.o kvdb
+	rm -f *.o kvdb getSet eksamen

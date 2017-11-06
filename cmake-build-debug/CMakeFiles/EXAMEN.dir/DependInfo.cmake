@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/glenn/EXAMEN/getSet.c" "/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/EXAMEN.dir/getSet.c.o"
   "/home/glenn/EXAMEN/kvdb.c" "/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdb.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
