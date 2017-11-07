@@ -58,7 +58,7 @@ void * getValue(char* keyValue);
 
 bool delete(char * keyValue);
 
-void deleteSubNodes(NODE *this);
+void deleteSubNodes(NODE *this, char *folderName);
 
 void bubbleSort(NODE * node);
 

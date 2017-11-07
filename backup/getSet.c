@@ -102,26 +102,29 @@ void * getValue(char* keyValue){
 }
 
 NODE *getNode(char* keyValue, NODE * root){
-    if(getType(keyValue) == nodeDontExist ){
-        return NULL;
-    }
     char keyValDup[strlen(keyValue + 1)];
     char *delimeter = ". ";
     char *word;
     int counter = 0;
     NODE * thisNode = root;
+    bool found = false;
 
     strcpy(keyValDup, keyValue);
     word = strtok(keyValDup, delimeter);
 
     while (word != NULL) {
+        found = false;
         if (thisNode->pnNodeCounter != -1) {
             for (int i = 0; i <= thisNode->pnNodeCounter; ++i) {
                 if (strcmp(thisNode->pnNodes[i].pszName, word) == 0) {
                     thisNode = &thisNode->pnNodes[i];
+                    found = true;
                     continue;
                 }
+            }if (found == false){
+                return NULL;
             }
+
         }
         counter++;
         word = strtok(NULL, delimeter);
