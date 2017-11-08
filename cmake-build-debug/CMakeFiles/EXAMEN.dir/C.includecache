@@ -11,6 +11,8 @@ string.h
 -
 stdlib.h
 -
+stdio.h
+-
 kvh.h
 /home/glenn/EXAMEN/kvh.h
 

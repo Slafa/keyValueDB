@@ -14,9 +14,8 @@
     <list default="true" id="50cc1901-d8ca-4c38-93a4-6fb59ed5adf4" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/getSet.c.o" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdb.c.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/EXAMEN" afterPath="$PROJECT_DIR$/cmake-build-debug/EXAMEN" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eksamen" afterPath="$PROJECT_DIR$/eksamen" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/EXAMEN" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eksamen" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getSet.c" afterPath="$PROJECT_DIR$/getSet.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvdb.c" afterPath="$PROJECT_DIR$/kvdb.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvh.h" afterPath="$PROJECT_DIR$/kvh.h" />
@@ -64,12 +63,13 @@
       <file leaf-file-name="getSet.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getSet.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1424">
-              <caret line="125" column="18" lean-forward="true" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+            <state relative-caret-position="90">
+              <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
-                <element signature="e#1236#1310#0" expanded="false" />
-                <element signature="e#1312#1589#0" expanded="false" />
+                <element signature="e#40#59#0" expanded="true" />
+                <element signature="e#1741#1815#0" expanded="false" />
+                <element signature="e#1817#2094#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,8 +78,8 @@
       <file leaf-file-name="kvdb.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kvdb.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="113" column="19" lean-forward="false" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+            <state relative-caret-position="266">
+              <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
       <file leaf-file-name="kvh.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kvh.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+            <state relative-caret-position="144">
+              <caret line="8" column="44" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -115,6 +115,11 @@
       <find>realloc</find>
       <find>getva</find>
       <find>getNod</find>
+      <find>getVa</find>
+      <find>getType</find>
+      <find>getTyp</find>
+      <find>node to</find>
+      <find>getTe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,8 +145,8 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="531" />
-    <option name="y" value="34" />
+    <option name="x" value="605" />
+    <option name="y" value="55" />
     <option name="width" value="1203" />
     <option name="height" value="961" />
   </component>
@@ -237,15 +242,15 @@
       <workItem from="1509548662259" duration="33634000" />
       <workItem from="1509631314877" duration="22937000" />
       <workItem from="1509707464835" duration="40409000" />
-      <workItem from="1510055179714" duration="15511000" />
+      <workItem from="1510055179714" duration="50627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229898000" />
+    <option name="totallyTimeSpent" value="265014000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="531" y="34" width="1203" height="961" extended-state="0" />
+    <frame x="605" y="55" width="1203" height="961" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.065669164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -280,14 +285,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/kvdb.c</url>
-          <line>197</line>
-          <option name="timeStamp" value="83" />
+          <line>385</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="84" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -340,6 +345,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="361" column="11" lean-forward="false" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -357,8 +363,9 @@
           <caret line="99" column="26" lean-forward="true" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#1236#1310#0" expanded="false" />
-            <element signature="e#1312#1589#0" expanded="false" />
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#1741#1815#0" expanded="false" />
+            <element signature="e#1817#2094#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -395,8 +402,9 @@
           <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#1236#1310#0" expanded="false" />
-            <element signature="e#1312#1589#0" expanded="false" />
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#1741#1815#0" expanded="false" />
+            <element signature="e#1817#2094#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,30 +703,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getSet.c">
+    <entry file="file://$PROJECT_DIR$/kvh.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1424">
-          <caret line="125" column="18" lean-forward="true" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#1236#1310#0" expanded="false" />
-            <element signature="e#1312#1589#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kvh.h">
+    <entry file="file://$PROJECT_DIR$/getSet.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#1741#1815#0" expanded="false" />
+            <element signature="e#1817#2094#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kvdb.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="113" column="19" lean-forward="false" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+        <state relative-caret-position="266">
+          <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
           <folding>
             <element signature="e#40#58#0" expanded="true" />
           </folding>

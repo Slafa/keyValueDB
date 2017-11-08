@@ -68,7 +68,7 @@ int main(int argc, char *fileAdress[]) {
     puts("\n");
     //puts(root.pszName);
 
-puts("nå kommer det");
+    puts("nå kommer det");
 
     test();
 
@@ -80,7 +80,7 @@ void test() {
 
     printAllNodes(root, root->pszName);
 
-    /*puts("");
+    puts("");
     printf("%d\n", getType("config.update.interval"));
     printf("%d\n", getType("config.update"));
     printf("%d\n", getType("config.update.server1"));
@@ -88,48 +88,39 @@ void test() {
     printf("%d\n", getType("strins.no.header"));
 
     puts("\n\n");
-    //printf("%s", (char *) getString("config.update.interval"));
+    printf("%s", getString("config.update.server1"));
 
 
-    setString("hest",getNode("strings.no.header",&root));*/
-    //setInt(4 ,getNode("config.update.interval",&root));
+    setString("hest",getNode("strings.no.header",root));
+    setInt(4 ,getNode("config.update.interval",root));
 
     puts("\n\n");
-    //printResult(stringValue, getString("strings.no.header"));
-    //printResult("strings.no.heade");
-    //printResult(stringValue, getString("strings.no.header"));
+    puts(getString("strings.no.header"));
 
-    //printResult(intValue, getInt("strings.no.header"));
-    //printResult(intValue, getInt("config.update.interval"));
-    //printf("%lu", (ULONG) getInt("config.update.interval"));
-    //printResult("strings.no.header");
 
-    //printAllNodes(&root, root.pszName);
+    printf("%lu", (ULONG) getInt("config.update.interval"));
+
 
     //delete("strings.no");
     puts("\n");
-   // printAllNodes(root, root->pszName);
+    // printAllNodes(root, root->pszName);
     puts("\n");
     //delete("strings.no");
-    delete("strings");
-    delete("strings.en.text");
+    //delete("strings");
+    //delete("strings.en");
     puts("\n\n");
     printAllNodes(root, root->pszName);
 
     //printAllNodes(getNode("strings.no", root), getNode("strings.no", root)->pszName);
     //puts(getNode("strings.no.header",root)->pszName);
-
-    puts("fgdsxfs");
+getText("button_ok","no");
 }
 
 void freeNode(NODE *node) {
-    puts("\n node to reset =");
-    puts(node->pszName);
     free(node->pszString);
     free(node->pnNodes);
     free(node->pszName);
     node->pnNodeCounter = -2;
-    printf("--> %d\n",node->pnNodeCounter);
 }
 
 bool delete(char *keyValue) {
@@ -144,6 +135,8 @@ bool delete(char *keyValue) {
     char *save;
     int nodeArrSize = 0;
     NODE **nodeArr = malloc(sizeof(nodeArr) * ++nodeArrSize);
+    NODE *tempNP = NULL;
+
     nodeArr[nodeArrSize - 1] = root;
 
 
@@ -159,169 +152,42 @@ bool delete(char *keyValue) {
         strcat(path, ".");
         word = strtok_r(NULL, delim, &save);
     }
-    printf("\narray er = %d", nodeArrSize);
-    printf("\n\n\n FØR: noden som sendes inn = %s plasser = %d",nodeArr[nodeArrSize - 1]->pszName,nodeArr[nodeArrSize - 1]->pnNodeCounter );
 
     deleteSubNodes(nodeArr[nodeArrSize - 1]);
-    printf("\nETTER : noden som sendes inn = %s plasser = %d",nodeArr[nodeArrSize - 1]->pszName,nodeArr[nodeArrSize - 1]->pnNodeCounter );
-puts("\n fan i helvette\n");
     for (int k = 0; k < nodeArrSize; ++k) {
-        //printf("\n%s",nodeArr[0]->pnNodes[k].pszName);
-        //printf("\n%d",nodeArr[0]->pnNodes[k].pnNodeCounter);
     }
-    puts("hit?");
 
     for (int i = nodeArrSize - 2; i >= 0; i--) {
 
 
-            NODE *tempNP = NULL;
-            int tempNPSize = -1;
-            int times = nodeArr[i]->pnNodeCounter;
-            for (int j = 0; j <= times; ++j) {
+        int tempNPSize = -1;
+        int times = nodeArr[i]->pnNodeCounter;
+        for (int j = 0; j <= times; ++j) {
 
-                if(nodeArr[i]->pnNodes[j].pnNodeCounter == -2) {
-                    continue;
-                }else{
+            if (nodeArr[i]->pnNodes[j].pnNodeCounter == -2) {
+                continue;
+            } else {
 
-                    puts("\nnavnet er ==");
-                    puts(nodeArr[i]->pnNodes[j].pszName);
-                    printf("\n verdien er = %d\n", nodeArr[i]->pnNodes[j].pnNodeCounter);
 
-                    if (tempNPSize == -1) {
+                if (tempNPSize == -1) {
                     tempNP = malloc(sizeof(*tempNP) * (++tempNPSize + 1));
                 } else {
                     tempNP = realloc(tempNP, sizeof(*tempNP) * (++tempNPSize + 1));
                 }
                 tempNP[tempNPSize] = nodeArr[i]->pnNodes[j];
             }
-            }
-            if (tempNPSize == -1) {
-                deleteSubNodes(nodeArr[i]);
-            }else{
-                free(nodeArr[i]->pnNodes);
-                nodeArr[i]->pnNodes = tempNP;
-                nodeArr[i]->pnNodeCounter = tempNPSize;
-            }
+        }
+        if (tempNPSize == -1) {
+            deleteSubNodes(nodeArr[i]);
+        } else {
+            free(nodeArr[i]->pnNodes);
+            nodeArr[i]->pnNodes = tempNP;
+            nodeArr[i]->pnNodeCounter = tempNPSize;
 
+        }
     }
+    free(nodeArr);
 }
-       /*
-        } else{
-            freeNode(&nodeArr[i]);
-                *//*if(!i < 1){
-                    deleteSubNodes(&nodeArr[i],&nodeArr[i-1]);
-                }else{
-                    deleteSubNodes(&nodeArr[i], NULL);
-                }
-        }
-    }/*
-free(temp);
-
-
-}
-
-/*
-bool delete(char *keyValue) {
-
-
-    if (getType(keyValue) == nodeDontExist) {
-        return false;
-    }
-
-    char *temp = malloc(strlen(keyValue) + 1);
-    char *word;
-    char *path = calloc(1, strlen(keyValue) + 1);
-    char *delim = ".";
-    char *save;
-    int nodeArrSize = 0;
-    NODE *nodeArr = malloc(sizeof(nodeArr) * nodeArrSize);
-
-    strcpy(temp, keyValue);
-    word = strtok_r(temp, delim, &save);
-
-    while (word != NULL) {
-
-        strcat(path, word);
-        nodeArr = realloc(nodeArr, sizeof(*nodeArr) * ++nodeArrSize);
-
-        nodeArr[nodeArrSize - 1] = *getNode(path, root);
-        strcat(path, ".");
-        word = strtok_r(NULL, delim, &save);
-
-
-    }
-    puts(nodeArr[nodeArrSize-1].pszName);
-
-    printf("\n%d", nodeArrSize);
-    puts("\n\n");
-    deleteSubNodes(&nodeArr[nodeArrSize-1],nodeArr[nodeArrSize-1].pszName);
-
-        for (int i = (nodeArrSize - 2); i >= 0; i--) {
-        printf("\narr størelsen på %s = : %d", nodeArr[i].pszName,nodeArr[i].pnNodeCounter);
-
-    */
-/*if (nodeArr[i].pnNodeCounter == -1) {
-            deleteSubNodes(&nodeArr[i], nodeArr[i].pszName);
-        }*//*
-
-        NODE *tempNP = NULL;
-        int tempNPSize = -1;
-        printf("\nrunde nr :%d", i);
-        for (int j = 0; j <= nodeArr[i].pnNodeCounter; ++j) {
-
-           */
-/* if (nodeArr[i].pnNodeCounter == -1){
-                deleteSubNodes(&nodeArr[i],nodeArr[i].pszName);
-            }*//*
-
-
-            if (!nodeArr[i].pnNodes[j].pnNodeCounter == -1) { //rart
-
-                if (tempNPSize == -1) {
-                    tempNP = malloc(sizeof(*tempNP) * (++tempNPSize+1));
-                } else {
-                    tempNP = realloc(tempNP, sizeof(*tempNP) * (++tempNPSize + 1));
-                }
-                //freeNode(nodeArr[i].pnNodes);
-                    tempNP[tempNPSize] = nodeArr[i].pnNodes[j];
-                }else{free(&nodeArr[i].pnNodes[j]);
-                nodeArr[i].pnNodeCounter--;
-            }
-            }
-        if (tempNPSize == -1){
-            deleteSubNodes(&nodeArr[i],nodeArr[i].pszName);
-        }else {
-            nodeArr[i].pnNodeCounter = tempNPSize;
-            nodeArr[i].pnNodes = tempNP;
-        }
-
-            */
-/*if (nodeArr[i].pnNodes[j].pnNodeCounter == -1) {
-                printf("\npeker som skal slettes = %d", nodeArr[i].pnNodes[j].pnNodeCounter);
-                //free(&nodeArr[i].pnNodes[j]);
-                nodeArr[i].pnNodeCounter--;
-                if(nodeArr[i].pnNodeCounter == -1){
-                    freeNode(&nodeArr[i]);
-
-                }*//*
-
-
-            //nodeArr[i].pnNodes = realloc(nodeArr[i].pnNodes,
-            //                              sizeof(NODE) * nodeArr[i].pnNodeCounter + 1);
-            //free(&nodeArr[i-1].pnNodes[i]);
-            // printf("nå skal den være borte : %s", nodeArr[i].pnNodes[j].pszName);
-
-        }
-    }
-
-    //bubbleSort(&nodeArr[i-1]);
-
-    //strcpy(nodeName,nodeArr[i].pszName);
-    //printf("horrreeeeeercdcdd    %s",nodeName);
-
-//free(&nodeArr[nodeArrSize-2]);
-
-*/
 
 
 void swap(NODE *a, NODE *b) {
@@ -348,7 +214,7 @@ void bubbleSort(NODE *node) {
 }
 
 
-void printResult(char *keyValue) {
+/*void printResult(char *keyValue) {
 
     nodeType type = getType(keyValue);
 
@@ -361,7 +227,7 @@ void printResult(char *keyValue) {
     } else {
         printf("\n%lu", (unsigned long) getValue(keyValue));
     }
-}
+}*/
 
 
 void setupNodes(char **pArr, int size, NODE *root) {
@@ -441,6 +307,9 @@ struct NODE *createNode(char *name) {
 }
 
 void printAllNodes(NODE *this, char *folderName) {
+    puts("\nfør");
+    puts(this->pszName);
+    puts("etter\n");
 
     char *pfolderName;
 
@@ -460,12 +329,11 @@ void printAllNodes(NODE *this, char *folderName) {
         }
 
     } else {
-
-        if (this->pszString != NULL) {
+        /*if (this->pszString != NULL) {
             printf("%s = %s\n", folderName, this->pszString);
         } else {
             printf("%s = %lu\n", folderName, this->ulIntVal);
-        }
+        }*/
 
     }
 
@@ -473,21 +341,65 @@ void printAllNodes(NODE *this, char *folderName) {
 
 void deleteSubNodes(NODE *this) {
 
-    printf("\nnode som skal slettes = %s, Verdi = %s",this->pszName, this->pszString);
 
-    if(this->pnNodeCounter != -1){
+    if (this->pnNodeCounter != -1) {
         int times = this->pnNodeCounter;
-        for (int i = times; i >= 0 ; --i) {
+        for (int i = times; i >= 0; --i) {
             deleteSubNodes(&this->pnNodes[i]);
             freeNode(&this->pnNodes[i]);
-            //this->pnNodeCounter--;
         }
-    }else{
+    } else {
         this->pnNodeCounter = -2;
     }
-    //if(this->pnNodeCounter == -1)
-    //freeNode(this);
-    }
+}
+
+NODE * findValue (char * valueName,char * language, NODE * this){
+            int times = this->pnNodeCounter;
+
+        for (int i = 0; i <= this->pnNodeCounter; i++) {
+            puts("kommer den hit?");
+            puts(this->pnNodes[i].pszName);
+            for (int j = 0; j <= this->pnNodes[i].pnNodeCounter; j++) {
+
+
+                if(strcmp(this->pnNodes[i].pnNodes[j].pszName,language) == 0){
+
+                    /// return if language node contain the value
+                    for (int k = 0; k <= this->pnNodes[i].pnNodes[j].pnNodeCounter; k++) {
+
+                        if(strcmp(this->pnNodes[i].pnNodes[j].pnNodes[k].pszName, valueName) == 0){
+                            return &this->pnNodes[i].pnNodes[j].pnNodes[k];
+                        }
+
+                    }
+                    char * otherLanguage;
+                    /// if no value was found, check the other language
+                    if(strcmp(language, "no") == 0 ){
+                        otherLanguage = "en";
+                    }else {
+                        otherLanguage = "no";
+                    }
+                    for (int k = 0; k <= this->pnNodes[i].pnNodeCounter; k++) {
+                        if (strcmp(this->pnNodes[k].pszName,otherLanguage) == 0){
+                            for (int l = 0; l <= this->pnNodes[k].pnNodeCounter; l++) {
+                                if(strcmp(this->pnNodes[k].pszName, valueName) == 0){
+                                    return &this->pnNodes[k];
+                            }
+                        }
+                    }
+                }
+
+            }
+            NODE * node = findValue(valueName, language, &this->pnNodes[i]);
+            if (node != NULL && strcmp(node->pszName,valueName) == 0){
+                return node;
+            }
+
+        }
+}
+    return NULL;
+
+}
 
 
 

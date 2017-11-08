@@ -4,7 +4,10 @@
 
 #ifndef EXAMEN_KVH_H
 #define EXAMEN_KVH_H
-#define MAX_NODE 10
+#define getType(a) _Generic((a), \
+                    NODE*: getTypeNode, \
+                    char*: getTypeString)(a)
+
 
 
 typedef unsigned long ULONG;
@@ -34,11 +37,11 @@ NODE * root;
 
 void setInt(ULONG intValue, NODE *this);
 
-void *getInt(char *stringValue);
+//ULONG *getInt(char *stringValue);
 
 void setString(char *stringValue, NODE *this);
 
-void *getString(char *stringValue);
+//char *getString(char *stringValue);
 
 struct NODE * createNode(char *name);
 
@@ -46,15 +49,16 @@ void setupNodes(char **pArr, int size, NODE *root);
 
 void printAllNodes(NODE *this, char *folderName);
 
-nodeType getType(char *keyValue);
+ULONG (getInt)(char *);
+char * (getString)(char *);
+
+
 
 NODE *getNode(char *keyValue, NODE *root);
 
 void test();
 
-void printResult(char *keyValue);
-
-void * getValue(char* keyValue);
+//void printResult(char *keyValue);
 
 bool delete(char * keyValue);
 
@@ -63,6 +67,15 @@ void deleteSubNodes(NODE *this);
 void bubbleSort(NODE * node);
 
 void swap(NODE *a, NODE *b);
+
+//nodeType getType(char *keyValue);
+nodeType getTypeNode(NODE * thisNode);
+nodeType getTypeString(char *keyValue);
+
+char * getText(char * value, char * language);
+
+NODE * findValue (char * valueName,char * language, NODE * this);
+
 
 
 #endif //EXAMEN_KVH_H
