@@ -93,6 +93,7 @@ NODE * node = findValue(value, language,root);
     if(node != NULL){
         printf("\n\nnavn til noden = %s\nverdien på noden = %s",node->pszName,node->pszString);
     }else{
+        puts("fant ikke");
         return NULL;
     }
 }
