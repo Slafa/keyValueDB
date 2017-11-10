@@ -177,6 +177,33 @@ kvdb.c.s:
 	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/kvdb.c.s
 .PHONY : kvdb.c.s
 
+kvdbFunctions.o: kvdbFunctions.c.o
+
+.PHONY : kvdbFunctions.o
+
+# target to build an object file
+kvdbFunctions.c.o:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o
+.PHONY : kvdbFunctions.c.o
+
+kvdbFunctions.i: kvdbFunctions.c.i
+
+.PHONY : kvdbFunctions.i
+
+# target to preprocess a source file
+kvdbFunctions.c.i:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/kvdbFunctions.c.i
+.PHONY : kvdbFunctions.c.i
+
+kvdbFunctions.s: kvdbFunctions.c.s
+
+.PHONY : kvdbFunctions.s
+
+# target to generate assembly for a file
+kvdbFunctions.c.s:
+	$(MAKE) -f CMakeFiles/EXAMEN.dir/build.make CMakeFiles/EXAMEN.dir/kvdbFunctions.c.s
+.PHONY : kvdbFunctions.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... kvdb.o"
 	@echo "... kvdb.i"
 	@echo "... kvdb.s"
+	@echo "... kvdbFunctions.o"
+	@echo "... kvdbFunctions.i"
+	@echo "... kvdbFunctions.s"
 .PHONY : help
 
 

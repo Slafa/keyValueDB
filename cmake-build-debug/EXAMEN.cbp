@@ -90,6 +90,9 @@
 		<Unit filename="/home/glenn/EXAMEN/kvdb.c">
 			<Option target="EXAMEN"/>
 		</Unit>
+		<Unit filename="/home/glenn/EXAMEN/kvdbFunctions.c">
+			<Option target="EXAMEN"/>
+		</Unit>
 		<Unit filename="/home/glenn/EXAMEN/kvh.h">
 			<Option target="EXAMEN"/>
 		</Unit>

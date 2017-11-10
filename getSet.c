@@ -13,7 +13,6 @@ nodeType getTypeString(char *keyValue) {
     char *delimeter = ". ";
     char *word;
     int counter = 0;
-    //bool nodeExist = false;
     NODE *thisNode = root;
 
 
@@ -21,14 +20,15 @@ nodeType getTypeString(char *keyValue) {
     word = strtok(keyValDup, delimeter);
 
     while (word != NULL) {
-        //nodeExist = false;
         if (thisNode->pnNodeCounter != -1) {
             for (int i = 0; i <= thisNode->pnNodeCounter; ++i) {
                 if (strcmp(thisNode->pnNodes[i].pszName, word) == 0) {
                     thisNode = &thisNode->pnNodes[i];
-                    //nodeExist = true;
                     continue;
                 }
+            }
+            if (strcmp(thisNode->pszName,word) != 0 ){
+                return nodeDontExist;
             }
         }
         counter++;
@@ -36,40 +36,19 @@ nodeType getTypeString(char *keyValue) {
 
     }
     return getType(thisNode);
-    /*if (nodeExist != true) {
-        //printf("%s", "ERROR = ");
-        return nodeDontExist;
-
-    } else if (thisNode->pnNodeCounter > -1) {
-        //printf("%s", "FOLDER = ");
-        return folder;
-
-    } else if (thisNode->pszString != NULL) {
-        //printf("%s", "STRING = ");
-        return stringValue;
-
-    } else {
-        //printf("%s", "INT = ");
-        return intValue;
-    }*/
-
 }
 
 nodeType getTypeNode(NODE * thisNode){
          if (thisNode == NULL) {
-        //printf("%s", "ERROR = ");
         return nodeDontExist;
 
     } else if (thisNode->pnNodeCounter > -1) {
-        //printf("%s", "FOLDER = ");
         return folder;
 
     } else if (thisNode->pszString != NULL) {
-        //printf("%s", "STRING = ");
         return stringValue;
 
     } else {
-        //printf("%s", "INT = ");
         return intValue;
     }
 }
@@ -91,9 +70,8 @@ void setString(char *stringValue, NODE *this) {
 char * getText(char * value, char * language){
 NODE * node = findValue(value, language,root);
     if(node != NULL){
-        printf("\n\nnavn til noden = %s\nverdien på noden = %s",node->pszName,node->pszString);
+        return node->pszString;
     }else{
-        puts("fant ikke");
         return NULL;
     }
 }

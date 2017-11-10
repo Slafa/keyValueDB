@@ -7,3 +7,6 @@ CMakeFiles/EXAMEN.dir/getSet.c.o: ../kvh.h
 CMakeFiles/EXAMEN.dir/kvdb.c.o: ../kvdb.c
 CMakeFiles/EXAMEN.dir/kvdb.c.o: ../kvh.h
 
+CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o: ../kvdbFunctions.c
+CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o: ../kvh.h
+

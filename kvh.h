@@ -9,7 +9,6 @@
                     char*: getTypeString)(a)
 
 
-
 typedef unsigned long ULONG;
 typedef enum {
     false,
@@ -33,49 +32,45 @@ typedef struct NODE {
     struct NODE *pnNodes; //pointer to subnodes(catalogs)
 } NODE;
 
-NODE * root;
+NODE *root;
 
 void setInt(ULONG intValue, NODE *this);
 
-//ULONG *getInt(char *stringValue);
 
 void setString(char *stringValue, NODE *this);
 
-//char *getString(char *stringValue);
 
-struct NODE * createNode(char *name);
+struct NODE *createNode(char *name);
 
 void setupNodes(char **pArr, int size, NODE *root);
 
 void printAllNodes(NODE *this, char *folderName);
 
 ULONG (getInt)(char *);
-char * (getString)(char *);
 
-
+char *(getString)(char *);
 
 NODE *getNode(char *keyValue, NODE *root);
 
 void test();
 
-//void printResult(char *keyValue);
-
-bool delete(char * keyValue);
+bool delete(char *keyValue);
 
 void deleteSubNodes(NODE *this);
 
-void bubbleSort(NODE * node);
+void sortNode(NODE *node);
 
 void swap(NODE *a, NODE *b);
 
-//nodeType getType(char *keyValue);
-nodeType getTypeNode(NODE * thisNode);
+void buildKVDB(char *fileName);
+
+nodeType getTypeNode(NODE *thisNode);
+
 nodeType getTypeString(char *keyValue);
 
-char * getText(char * value, char * language);
+char *getText(char *value, char *language);
 
-NODE * findValue (char * valueName,char * language, NODE * this);
-
+NODE *findValue(char *valueName, char *language, NODE *this);
 
 
 #endif //EXAMEN_KVH_H

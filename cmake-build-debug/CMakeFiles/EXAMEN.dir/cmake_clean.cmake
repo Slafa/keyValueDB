@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/EXAMEN.dir/kvdb.c.o"
   "CMakeFiles/EXAMEN.dir/getSet.c.o"
+  "CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o"
   "EXAMEN.pdb"
   "EXAMEN"
 )

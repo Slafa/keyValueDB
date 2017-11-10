@@ -4,6 +4,6 @@ project(EXAMEN)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        kvdb.c kvh.h getSet.c)
+        kvdb.c kvh.h getSet.c kvdbFunctions.c)
 
-add_executable(EXAMEN ${SOURCE_FILES})
+add_executable(EXAMEN ${SOURCE_FILES} kvdbFunctions.c)
