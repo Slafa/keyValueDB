@@ -30,7 +30,6 @@ void test() {
 
     puts("\n\n");
     puts(getString("strings.no.header",NULL));
-
 //setValue(200,"config.update.interval",NULL);
     printf("%lu", (ULONG) getInt("config.update.interval",intValue));
 
@@ -51,9 +50,10 @@ void test() {
         printf("\nroot subfolders size = %d",root->pnNodes[i].pnNodeCounter);
     }*/
     setValue("horekunde","balle.hest.lol",NULL);
-
+    setValue("hey mr mr","strings.en.text",NULL);
+puts("");
     printAllNodes(root, root->pszName);
-
+puts("\n\n");
     //printAllNodes(getNode("strings.no", root), getNode("strings.no", root)->pszName);
     //puts(getNode("strings.no.header",root)->pszName);
     puts("søker etter \"header\" i \"no\"");
@@ -65,6 +65,7 @@ void test() {
     char * a = getValue("strings.no.header","");
     puts(a);
     printf("%lu",getValue("config.loglevel",3));
+
 }
 
 
@@ -220,13 +221,15 @@ void setupNodes(char **pArr, int size, NODE *root) {
         char *word;
         char *temp;
         NODE *lastNode;
+        NODE * nodesToSort = calloc(1,sizeof(NODE));
         bool nodeExist;
         for (int i = 0; i < size; ++i) {
+            int sortArrSize = 0;
             lastNode = root;
             char *deli = ". ";
             word = strtok(pArr[i], deli);
             temp = word;
-            sortNode(lastNode);
+            //sortNode(lastNode);
 
             while (strcmp(word, "=") != 0) {
                 nodeExist = false;
@@ -252,8 +255,10 @@ void setupNodes(char **pArr, int size, NODE *root) {
                     ///increase the size of node array, place a new node into it,
                     ///and set last node pointer to the new node.
                     if (nodeExist == false) {
+                        nodesToSort = realloc(nodesToSort, sizeof(NODE)* (++sortArrSize+1));
                         lastNode->pnNodes = realloc(lastNode->pnNodes, sizeof(NODE) * (lastNode->pnNodeCounter + 2));
                         lastNode->pnNodes[++lastNode->pnNodeCounter] = *createNode(temp);
+                        nodesToSort[sortArrSize-1] = *lastNode;
                         lastNode = &lastNode->pnNodes[lastNode->pnNodeCounter];
 
                     }
@@ -273,10 +278,13 @@ void setupNodes(char **pArr, int size, NODE *root) {
                 ULONG intValue = (ULONG) atoi(word);
                 setValue(intValue, NULL, lastNode);
             }
-            sortNode(lastNode);
+            for (int k = 0; k <sortArrSize ; ++k) {
+                sortNode(&nodesToSort[k]);
+
+            }
 
         }
-
+        free(nodesToSort);
     }
 }
 
