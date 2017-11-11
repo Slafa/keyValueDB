@@ -83,7 +83,13 @@ nodeType setString(char *value, char * keyValue, NODE *this) {
     }
 
     if(node == NULL){
-        char * nodeToCreate = {keyValue};
+        char val[strlen(keyValue)+ strlen(value)+6];
+        strcat(val,keyValue);
+        strcat(val," = \"");
+        strcat(val,value);
+        strcat(val,"\"");
+        puts(val);
+        char * nodeToCreate = {val};
         setupNodes(&nodeToCreate,1,root);
         node = getNode(keyValue, root);
     }
@@ -98,7 +104,7 @@ nodeType setString(char *value, char * keyValue, NODE *this) {
         node->pszString = realloc(node->pszString,strlen(value) + 1);
 
     }
-    strcpy(this->pszString, value);
+    strcpy(node->pszString, value);
 }
 
 char * getText(char * value, char * language){

@@ -50,6 +50,8 @@ void test() {
         printf("\nroot subfolders = %s",root->pnNodes[i].pszName);
         printf("\nroot subfolders size = %d",root->pnNodes[i].pnNodeCounter);
     }*/
+    setValue("horekunde","balle.hest.lol",NULL);
+
     printAllNodes(root, root->pszName);
 
     //printAllNodes(getNode("strings.no", root), getNode("strings.no", root)->pszName);

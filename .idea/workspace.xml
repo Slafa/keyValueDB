@@ -12,10 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50cc1901-d8ca-4c38-93a4-6fb59ed5adf4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getSet.c" afterPath="$PROJECT_DIR$/getSet.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvdbFunctions.c" afterPath="$PROJECT_DIR$/kvdbFunctions.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvh.h" afterPath="$PROJECT_DIR$/kvh.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getSet.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getSet.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getSet.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+            <state relative-caret-position="271">
+              <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -62,8 +60,8 @@
       <file leaf-file-name="kvdb.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kvdb.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
               </folding>
@@ -71,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kvdbFunctions.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kvdbFunctions.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kvdbFunctions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="267" column="25" lean-forward="false" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
+            <state relative-caret-position="279">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -119,8 +117,8 @@
       <find>nå</find>
       <find>enumer</find>
       <find>getVa</find>
-      <find>crea</find>
       <find>getType</find>
+      <find>crea</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,8 +132,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/kvdb.c" />
         <option value="$PROJECT_DIR$/kvh.h" />
-        <option value="$PROJECT_DIR$/getSet.c" />
         <option value="$PROJECT_DIR$/kvdbFunctions.c" />
+        <option value="$PROJECT_DIR$/getSet.c" />
       </list>
     </option>
   </component>
@@ -235,12 +233,12 @@
       <workItem from="1509631314877" duration="22937000" />
       <workItem from="1509707464835" duration="40409000" />
       <workItem from="1510055179714" duration="88906000" />
-      <workItem from="1510422834175" duration="9673000" />
+      <workItem from="1510422834175" duration="11644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312966000" />
+    <option name="totallyTimeSpent" value="314937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="543" y="93" width="1203" height="866" extended-state="0" />
@@ -296,10 +294,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/getSet.c</url>
+          <line>95</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="95" />
+      <option name="time" value="98" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -682,16 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kvdb.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lala.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -708,20 +703,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getSet.c">
+    <entry file="file://$PROJECT_DIR$/kvdb.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+        <state relative-caret-position="252">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#40#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kvdbFunctions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="267" column="25" lean-forward="false" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
+        <state relative-caret-position="279">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSet.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
           </folding>
