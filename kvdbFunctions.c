@@ -21,17 +21,18 @@ void test() {
     printf("%d\n", getType("strins.no.header"));
 
     puts("\n\n");
-    printf("%s", getString("config.update.server1"));
+    printf("%s", getString("config.update.server1",NULL));
 
 
     setString("hest", getNode("strings.no.header", root));
-    setInt(4, getNode("config.update.interval", root));
+    setInt(90000,NULL, getNode("config.update.interval", root));
+    setInt(90001,"config.update.interval", NULL);
 
     puts("\n\n");
-    puts(getString("strings.no.header"));
+    puts(getString("strings.no.header",NULL));
 
-
-    printf("%lu", (ULONG) getInt("config.update.interval"));
+//setValue(200,"config.update.interval",NULL);
+    printf("%lu", (ULONG) getInt("config.update.interval",intValue));
 
 
     //delete("strings.no");
@@ -59,7 +60,9 @@ void test() {
     enumerate("config.update.*",printAllNodes);
 
 
-    int a = getValue("strings.no.header");
+    char * a = getValue("strings.no.header","");
+    puts(a);
+    printf("%lu",getValue("config.loglevel",3));
 }
 
 
@@ -266,7 +269,7 @@ void setupNodes(char **pArr, int size, NODE *root) {
 
             } else {
                 ULONG intValue = (ULONG) atoi(word);
-                setInt(intValue, lastNode);
+                setInt(intValue, NULL, lastNode);
             }
             sortNode(lastNode);
 

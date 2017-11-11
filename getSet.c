@@ -53,8 +53,24 @@ nodeType getTypeNode(NODE * thisNode){
     }
 }
 
-void setInt(ULONG intValue, NODE *this) {
-    this->ulIntVal = intValue;
+nodeType setInt(ULONG intValue, char *keyValue, NODE * this) {
+
+    NODE *node;
+    if (this == NULL){
+        node = getNode(keyValue, root);
+    }else{
+        node = this;
+    }
+
+    if(node == NULL){
+        char * nodeToCreate = {keyValue};
+        setupNodes(&nodeToCreate,1,root);
+        node = getNode(keyValue, root);
+    }
+    else if(getType(node) == stringValue){
+        return wrongType;
+    }
+    node->ulIntVal = intValue;
 }
 
 void setString(char *stringValue, NODE *this) {
@@ -75,19 +91,19 @@ NODE * node = findValue(value, language,root);
         return NULL;
     }
 }
-
-char * getString (char * keyValue){
-    nodeType type=  getType(keyValue);
+///param (blank) =  any string value
+char * getString (char * keyValue, char * blank){
+    nodeType type = getType(keyValue);
 
     if (type == stringValue){
         return getNode(keyValue,root)->pszString;
     }
     return NULL;
 }
+///param (blank) =  any int value
+ULONG getInt(char * keyValue, int blank){
 
-ULONG getInt(char * keyValue){
-
-    nodeType type=  getType(keyValue);
+    nodeType type = getType(keyValue);
     if (type == intValue){
         return getNode(keyValue, root)->ulIntVal;
     }

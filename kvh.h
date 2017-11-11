@@ -4,13 +4,21 @@
 
 #ifndef EXAMEN_KVH_H
 #define EXAMEN_KVH_H
-#define getType(a) _Generic((a), \
-                    NODE*: getTypeNode, \
+#define getType(a)                              \
+                    _Generic((a),               \
+                    NODE*: getTypeNode,         \
                     char*: getTypeString)(a)
+///params (b) = any int value if expected int or any string value for string.
+#define getValue(a,b)                           \
+                    _Generic((b),               \
+                    char*: getString,           \
+                    int: getInt)(a,b)
 
-#define getValue(a,b) _Generic((a), \
-                    char*: getString, \
-                    char*: getInt)(a)
+#define setValue(a)(b)(c)                           \
+                    _Generic((a),               \
+                    char*: setString,           \
+                    int: setInt)(a,b,c)
+
 
 typedef unsigned long ULONG;
 typedef enum {
@@ -39,7 +47,7 @@ typedef void (*callBack) (NODE *, char *);
 
 NODE *root;
 
-void setInt(ULONG intValue, NODE *this);
+nodeType setInt(ULONG intValue, char *keyValue, NODE * this);
 
 void setString(char *stringValue, NODE *this);
 
@@ -49,9 +57,9 @@ void setupNodes(char **pArr, int size, NODE *root);
 
 void printAllNodes(NODE *this, char *folderName);
 
-ULONG (getInt)(char *);
+ULONG getInt(char * keyValue, int nodeType);
 
-char *(getString)(char *);
+char * getString(char * keyValue, char * nodeType);
 
 NODE *getNode(char *keyValue, NODE *root);
 
