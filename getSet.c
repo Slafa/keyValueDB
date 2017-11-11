@@ -130,4 +130,28 @@ NODE *getNode(char* keyValue, NODE * root){
     return thisNode;
 }
 
+///var litt usikker på hva som skulle være poenget med denne funksjonen og hvordan den skulle virke.
+///valgte derfor å printe ut alle undernodene og verdien.
+void enumerate(char * keyName, callBack callbackFunc){
+    char * fullPath = calloc(1, sizeof(char) * strlen(keyName+1));
+    strcpy(fullPath,keyName);
+
+    if(fullPath != NULL && fullPath[strlen(fullPath)-1] =='*') {
+        fullPath[strlen(fullPath)-1] = '\0';
+        if(fullPath[strlen(fullPath)-1] =='.'){
+            fullPath[strlen(fullPath)-1] = '\0';
+        }else{
+            return;
+        }
+    }
+
+    NODE * node = getNode(fullPath,root);
+    if (node != NULL) {
+        for (int i = 0; i <= node->pnNodeCounter; ++i) {
+
+            callbackFunc(&node->pnNodes[i],node->pnNodes[i].pszName);
+        }
+    }
+}
+
 

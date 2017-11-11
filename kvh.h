@@ -8,6 +8,9 @@
                     NODE*: getTypeNode, \
                     char*: getTypeString)(a)
 
+#define getValue(a,b) _Generic((a), \
+                    char*: getString, \
+                    char*: getInt)(a)
 
 typedef unsigned long ULONG;
 typedef enum {
@@ -32,13 +35,13 @@ typedef struct NODE {
     struct NODE *pnNodes; //pointer to subnodes(catalogs)
 } NODE;
 
+typedef void (*callBack) (NODE *, char *);
+
 NODE *root;
 
 void setInt(ULONG intValue, NODE *this);
 
-
 void setString(char *stringValue, NODE *this);
-
 
 struct NODE *createNode(char *name);
 
@@ -71,6 +74,10 @@ nodeType getTypeString(char *keyValue);
 char *getText(char *value, char *language);
 
 NODE *findValue(char *valueName, char *language, NODE *this);
+
+void enumerate(char * keyName, callBack callBackFunk);
+
+
 
 
 #endif //EXAMEN_KVH_H

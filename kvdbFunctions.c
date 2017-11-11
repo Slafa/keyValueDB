@@ -55,7 +55,15 @@ void test() {
     //puts(getNode("strings.no.header",root)->pszName);
     puts("søker etter \"header\" i \"no\"");
     puts(getText("header", "no"));
+
+    enumerate("config.update.*",printAllNodes);
+
+
+    int a = getValue("strings.no.header");
 }
+
+
+
 
 void buildKVDB(char *fileName) {
     int lineCounter = 0;
