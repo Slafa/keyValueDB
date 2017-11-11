@@ -14,10 +14,10 @@
                     char*: getString,           \
                     int: getInt)(a,b)
 
-#define setValue(a)(b)(c)                           \
+#define setValue(a,b,c)                         \
                     _Generic((a),               \
                     char*: setString,           \
-                    int: setInt)(a,b,c)
+                    ULONG: setInt)(a,b,c)
 
 
 typedef unsigned long ULONG;
@@ -49,7 +49,7 @@ NODE *root;
 
 nodeType setInt(ULONG intValue, char *keyValue, NODE * this);
 
-void setString(char *stringValue, NODE *this);
+nodeType setString(char *value, char * keyValue, NODE *this);
 
 struct NODE *createNode(char *name);
 

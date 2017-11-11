@@ -24,7 +24,7 @@ void test() {
     printf("%s", getString("config.update.server1",NULL));
 
 
-    setString("hest", getNode("strings.no.header", root));
+    setString("hest", NULL, getNode("strings.no.header", root));
     setInt(90000,NULL, getNode("config.update.interval", root));
     setInt(90001,"config.update.interval", NULL);
 
@@ -265,11 +265,11 @@ void setupNodes(char **pArr, int size, NODE *root) {
             ///sets the value of the node if its the last one
             if (word[0] == '"') {
                 temp = strtok(word, "\"");
-                setString(temp, lastNode);
+                setValue(temp, NULL, lastNode);
 
             } else {
                 ULONG intValue = (ULONG) atoi(word);
-                setInt(intValue, NULL, lastNode);
+                setValue(intValue, NULL, lastNode);
             }
             sortNode(lastNode);
 

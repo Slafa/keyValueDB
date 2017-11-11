@@ -73,14 +73,32 @@ nodeType setInt(ULONG intValue, char *keyValue, NODE * this) {
     node->ulIntVal = intValue;
 }
 
-void setString(char *stringValue, NODE *this) {
-    if (this->pszString == NULL) {
-        this->pszString = malloc(strlen(stringValue)+1);
+nodeType setString(char *value, char * keyValue, NODE *this) {
+
+    NODE *node;
+    if (this == NULL){
+        node = getNode(keyValue, root);
     }else{
-        this->pszString = realloc(this->pszString,strlen(stringValue) + 1);
+        node = this;
+    }
+
+    if(node == NULL){
+        char * nodeToCreate = {keyValue};
+        setupNodes(&nodeToCreate,1,root);
+        node = getNode(keyValue, root);
+    }
+    else if(this == NULL && getType(node) != stringValue){
+        return wrongType;
+    }
+
+
+    if (node->pszString == NULL) {
+        node->pszString = malloc(strlen(value)+1);
+    }else{
+        node->pszString = realloc(node->pszString,strlen(value) + 1);
 
     }
-    strcpy(this->pszString, stringValue);
+    strcpy(this->pszString, value);
 }
 
 char * getText(char * value, char * language){
