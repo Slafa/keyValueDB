@@ -12,33 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50cc1901-d8ca-4c38-93a4-6fb59ed5adf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tull.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/getSet.c.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdb.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/kvdb.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/EXAMEN" afterPath="$PROJECT_DIR$/cmake-build-debug/EXAMEN" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eksamen" afterPath="$PROJECT_DIR$/eksamen" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eksamen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeSystem.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeSystem.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EXAMEN.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/EXAMEN.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/EXAMEN.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getSet.c" afterPath="$PROJECT_DIR$/getSet.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvdb.c" afterPath="$PROJECT_DIR$/kvdb.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvdbFunctions.c" afterPath="$PROJECT_DIR$/kvdbFunctions.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kvh.h" afterPath="$PROJECT_DIR$/kvh.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="kvdb.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kvdb.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kvdb.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -72,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getSet.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getSet.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getSet.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-599">
-              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,8 +72,8 @@
       <file leaf-file-name="kvdbFunctions.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kvdbFunctions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5333">
-              <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+            <state relative-caret-position="-405">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -133,10 +110,10 @@
         <option value="$PROJECT_DIR$/test.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tull.txt" />
-        <option value="$PROJECT_DIR$/kvdbFunctions.c" />
         <option value="$PROJECT_DIR$/kvh.h" />
         <option value="$PROJECT_DIR$/getSet.c" />
         <option value="$PROJECT_DIR$/kvdb.c" />
+        <option value="$PROJECT_DIR$/kvdbFunctions.c" />
       </list>
     </option>
   </component>
@@ -242,7 +219,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336437000" />
+    <option name="totallyTimeSpent" value="337188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="887" y="54" width="953" height="961" extended-state="0" />
@@ -695,14 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kvdbFunctions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5333">
-          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kvh.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -711,21 +680,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getSet.c">
+    <entry file="file://$PROJECT_DIR$/kvdb.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-599">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kvdbFunctions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kvdb.c">
+    <entry file="file://$PROJECT_DIR$/getSet.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
