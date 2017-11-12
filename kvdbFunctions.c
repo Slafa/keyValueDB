@@ -8,67 +8,65 @@
 #include "kvh.h"
 
 
+void start() {
+    char *lines = "----------------------------------------------------------------------------\n";
 
-void test() {
 
+    puts("Printer ut alle nodene for å sjekke at de er der, og er sortert alfabetisk.\n");
     printAllNodes(root, root->pszName);
 
-    puts("");
+    puts(lines);
+    puts("\nforsøker å slette strings.no noden.");
+    delete("strings.no");
+
+    puts("printer ut alle nodene for å sjekke at strings.no er borte\n");
+    printAllNodes(root, root->pszName);
+    puts(lines);
+
+    puts("\nforsøker å slette strings.en noden");
+    delete("strings.en");
+
+    puts("printer ut alle nodene for å sjekke at strings også ble borte\n");
+    printAllNodes(root, root->pszName);
+    puts(lines);
+
+    puts("\nforsøker å endre config.loglevel til 200, i tillegg til å lage noen nye");
+
+    setValue((ULONG) 200, "config.loglevel", NULL);
+    setValue("opp", "strings.no.button_up", NULL);
+    setInt((ULONG) 9000, "config.test.9000", NULL);
+    setString("up", "strings.en.button_up", NULL);
+    setString("ned", "strings.no.button_down", NULL);
+    setString("down", "strings.en.button_down", NULL);
+    setString("left", "strings.en.button_left", NULL);
+    setString("right", "strings.en.button_right", NULL);
+    setString("hoyre", "strings.no.button_right", NULL);
+    puts("\nhenter nodene for å sjekke endringene\n");
+    printAllNodes(root, root->pszName);
+    puts(lines);
+
+    puts("tester enumerate på strings.en\n");
+    enumerate("strings.en", printAllNodes);
+    puts(lines);
+
+    puts("tester get value på config.update.timeout, og config.update.server1 ");
+    printf("%lu\n", getValue("config.update.timeout", 1));
+    puts(getValue("config.update.server1", ""));
+    puts(lines);
+
+    puts("tester getText på button_left på norsk og engelsk + button down på norsk");
+    puts(getText("button_left", "no"));
+    puts(getText("button_left", "en"));
+    puts(getText("button_down", "no"));
+    puts(lines);
+
+    puts("tester getType på forskjellige nøkkelverdier\n");
     printf("%d\n", getType("config.update.interval"));
     printf("%d\n", getType("config.update"));
     printf("%d\n", getType("config.update.server1"));
     printf("%d\n", getType("strings.no.header"));
     printf("%d\n", getType("strins.no.header"));
-
-    puts("\n\n");
-    printf("%s", getString("config.update.server1",NULL));
-
-
-    setString("hest", NULL, getNode("strings.no.header", root));
-    setInt(90000,NULL, getNode("config.update.interval", root));
-    setInt(90001,"config.update.interval", NULL);
-
-    puts("\n\n");
-    puts(getString("strings.no.header",NULL));
-//setValue(200,"config.update.interval",NULL);
-    printf("%lu", (ULONG) getInt("config.update.interval",intValue));
-
-
-    //delete("strings.no");
-    puts("\n");
-    // printAllNodes(root, root->pszName);
-    puts("\n");
-    //delete("strings.no");
-    //delete("strings.no");
-    //delete("strings.en");
-    delete("strings.en.text");
-    //delete("strings.no.header");
-    puts("\n\n");
-
-    /*for (int i = 0; i <=root->pnNodeCounter ; ++i) {
-        printf("\nroot subfolders = %s",root->pnNodes[i].pszName);
-        printf("\nroot subfolders size = %d",root->pnNodes[i].pnNodeCounter);
-    }*/
-    setValue("horekunde","balle.hest.lol",NULL);
-    setValue("hey mr mr","strings.en.text",NULL);
-puts("");
-    printAllNodes(root, root->pszName);
-puts("\n\n");
-    //printAllNodes(getNode("strings.no", root), getNode("strings.no", root)->pszName);
-    //puts(getNode("strings.no.header",root)->pszName);
-    puts("søker etter \"header\" i \"no\"");
-    puts(getText("header", "no"));
-
-    enumerate("config.update.*",printAllNodes);
-
-
-    char * a = getValue("strings.no.header","");
-    puts(a);
-    printf("%lu",getValue("config.loglevel",3));
-
 }
-
-
 
 
 void buildKVDB(char *fileName) {
@@ -200,7 +198,7 @@ void sortNode(NODE *node) {
     }
 }
 
-/*void printResult(char *keyValue) {
+void printResult(char *keyValue) {
 
     nodeType type = getType(keyValue);
 
@@ -209,11 +207,11 @@ void sortNode(NODE *node) {
     } else if (type == wrongType) {
         printf("\nwrong data type");
     } else if ((type == stringValue)) {
-        printf("\n%s", (char *) getValue(keyValue));
+        printf("\n%s", (char *) getValue(keyValue, ""));
     } else {
-        printf("\n%lu", (unsigned long) getValue(keyValue));
+        printf("\n%lu", (unsigned long) getValue(keyValue, 1));
     }
-}*/
+}
 
 
 void setupNodes(char **pArr, int size, NODE *root) {
@@ -221,7 +219,7 @@ void setupNodes(char **pArr, int size, NODE *root) {
         char *word;
         char *temp;
         NODE *lastNode;
-        NODE * nodesToSort = calloc(1,sizeof(NODE));
+        NODE *nodesToSort = calloc(1, sizeof(NODE));
         bool nodeExist;
         for (int i = 0; i < size; ++i) {
             int sortArrSize = 0;
@@ -230,9 +228,9 @@ void setupNodes(char **pArr, int size, NODE *root) {
             word = strtok(pArr[i], deli);
             temp = word;
             //sortNode(lastNode);
-
             while (strcmp(word, "=") != 0) {
                 nodeExist = false;
+
                 if (lastNode->pnNodeCounter == -1) {
                     lastNode->pnNodes = calloc(1, sizeof(NODE));
                     lastNode->pnNodes[0] = *createNode(temp);
@@ -255,10 +253,10 @@ void setupNodes(char **pArr, int size, NODE *root) {
                     ///increase the size of node array, place a new node into it,
                     ///and set last node pointer to the new node.
                     if (nodeExist == false) {
-                        nodesToSort = realloc(nodesToSort, sizeof(NODE)* (++sortArrSize+1));
+                        nodesToSort = realloc(nodesToSort, sizeof(NODE) * (++sortArrSize + 1));
                         lastNode->pnNodes = realloc(lastNode->pnNodes, sizeof(NODE) * (lastNode->pnNodeCounter + 2));
                         lastNode->pnNodes[++lastNode->pnNodeCounter] = *createNode(temp);
-                        nodesToSort[sortArrSize-1] = *lastNode;
+                        nodesToSort[sortArrSize - 1] = *lastNode;
                         lastNode = &lastNode->pnNodes[lastNode->pnNodeCounter];
 
                     }
@@ -278,7 +276,7 @@ void setupNodes(char **pArr, int size, NODE *root) {
                 ULONG intValue = (ULONG) atoi(word);
                 setValue(intValue, NULL, lastNode);
             }
-            for (int k = 0; k <sortArrSize ; ++k) {
+            for (int k = 0; k < sortArrSize; ++k) {
                 sortNode(&nodesToSort[k]);
 
             }

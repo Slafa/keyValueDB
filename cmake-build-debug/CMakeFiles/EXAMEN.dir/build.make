@@ -43,10 +43,10 @@ RM = /home/glenn/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/172.4343.16/bin/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/glenn/EXAMEN
+CMAKE_SOURCE_DIR = /home/glenn/EXAMEN/keyValueDB
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/glenn/EXAMEN/cmake-build-debug
+CMAKE_BINARY_DIR = /home/glenn/EXAMEN/keyValueDB/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/EXAMEN.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/EXAMEN.dir/flags.make
 
 CMakeFiles/EXAMEN.dir/kvdb.c.o: CMakeFiles/EXAMEN.dir/flags.make
 CMakeFiles/EXAMEN.dir/kvdb.c.o: ../kvdb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/EXAMEN.dir/kvdb.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/kvdb.c.o   -c /home/glenn/EXAMEN/kvdb.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/EXAMEN.dir/kvdb.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/kvdb.c.o   -c /home/glenn/EXAMEN/keyValueDB/kvdb.c
 
 CMakeFiles/EXAMEN.dir/kvdb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EXAMEN.dir/kvdb.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/kvdb.c > CMakeFiles/EXAMEN.dir/kvdb.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/keyValueDB/kvdb.c > CMakeFiles/EXAMEN.dir/kvdb.c.i
 
 CMakeFiles/EXAMEN.dir/kvdb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EXAMEN.dir/kvdb.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/kvdb.c -o CMakeFiles/EXAMEN.dir/kvdb.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/keyValueDB/kvdb.c -o CMakeFiles/EXAMEN.dir/kvdb.c.s
 
 CMakeFiles/EXAMEN.dir/kvdb.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/EXAMEN.dir/kvdb.c.o.provides.build: CMakeFiles/EXAMEN.dir/kvdb.c.o
 
 CMakeFiles/EXAMEN.dir/getSet.c.o: CMakeFiles/EXAMEN.dir/flags.make
 CMakeFiles/EXAMEN.dir/getSet.c.o: ../getSet.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/EXAMEN.dir/getSet.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/getSet.c.o   -c /home/glenn/EXAMEN/getSet.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/EXAMEN.dir/getSet.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/getSet.c.o   -c /home/glenn/EXAMEN/keyValueDB/getSet.c
 
 CMakeFiles/EXAMEN.dir/getSet.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EXAMEN.dir/getSet.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/getSet.c > CMakeFiles/EXAMEN.dir/getSet.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/keyValueDB/getSet.c > CMakeFiles/EXAMEN.dir/getSet.c.i
 
 CMakeFiles/EXAMEN.dir/getSet.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EXAMEN.dir/getSet.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/getSet.c -o CMakeFiles/EXAMEN.dir/getSet.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/keyValueDB/getSet.c -o CMakeFiles/EXAMEN.dir/getSet.c.s
 
 CMakeFiles/EXAMEN.dir/getSet.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/EXAMEN.dir/getSet.c.o.provides.build: CMakeFiles/EXAMEN.dir/getSet.c.
 
 CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o: CMakeFiles/EXAMEN.dir/flags.make
 CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o: ../kvdbFunctions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o   -c /home/glenn/EXAMEN/kvdbFunctions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o   -c /home/glenn/EXAMEN/keyValueDB/kvdbFunctions.c
 
 CMakeFiles/EXAMEN.dir/kvdbFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EXAMEN.dir/kvdbFunctions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/kvdbFunctions.c > CMakeFiles/EXAMEN.dir/kvdbFunctions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/glenn/EXAMEN/keyValueDB/kvdbFunctions.c > CMakeFiles/EXAMEN.dir/kvdbFunctions.c.i
 
 CMakeFiles/EXAMEN.dir/kvdbFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EXAMEN.dir/kvdbFunctions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/kvdbFunctions.c -o CMakeFiles/EXAMEN.dir/kvdbFunctions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/glenn/EXAMEN/keyValueDB/kvdbFunctions.c -o CMakeFiles/EXAMEN.dir/kvdbFunctions.c.s
 
 CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o.requires:
 
@@ -143,7 +143,7 @@ EXAMEN: CMakeFiles/EXAMEN.dir/getSet.c.o
 EXAMEN: CMakeFiles/EXAMEN.dir/kvdbFunctions.c.o
 EXAMEN: CMakeFiles/EXAMEN.dir/build.make
 EXAMEN: CMakeFiles/EXAMEN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/glenn/EXAMEN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable EXAMEN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable EXAMEN"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EXAMEN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,6 +162,6 @@ CMakeFiles/EXAMEN.dir/clean:
 .PHONY : CMakeFiles/EXAMEN.dir/clean
 
 CMakeFiles/EXAMEN.dir/depend:
-	cd /home/glenn/EXAMEN/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/glenn/EXAMEN /home/glenn/EXAMEN /home/glenn/EXAMEN/cmake-build-debug /home/glenn/EXAMEN/cmake-build-debug /home/glenn/EXAMEN/cmake-build-debug/CMakeFiles/EXAMEN.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/glenn/EXAMEN/keyValueDB/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/glenn/EXAMEN/keyValueDB /home/glenn/EXAMEN/keyValueDB /home/glenn/EXAMEN/keyValueDB/cmake-build-debug /home/glenn/EXAMEN/keyValueDB/cmake-build-debug /home/glenn/EXAMEN/keyValueDB/cmake-build-debug/CMakeFiles/EXAMEN.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/EXAMEN.dir/depend
 

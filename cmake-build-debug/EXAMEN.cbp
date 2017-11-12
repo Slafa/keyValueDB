@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/glenn/EXAMEN/cmake-build-debug"/>
+				<Option working_dir="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/glenn/EXAMEN/cmake-build-debug"/>
+				<Option working_dir="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/glenn/EXAMEN/cmake-build-debug"/>
+				<Option working_dir="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EXAMEN">
-				<Option output="/home/glenn/EXAMEN/cmake-build-debug/EXAMEN" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/glenn/EXAMEN/cmake-build-debug"/>
+				<Option output="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/EXAMEN" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXAMEN"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXAMEN"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EXAMEN/fast">
-				<Option output="/home/glenn/EXAMEN/cmake-build-debug/EXAMEN" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/glenn/EXAMEN/cmake-build-debug"/>
+				<Option output="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/EXAMEN" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/glenn/EXAMEN/keyValueDB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,26 +77,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXAMEN/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/glenn/EXAMEN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 EXAMEN/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/glenn/EXAMEN/keyValueDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/glenn/EXAMEN/getSet.c">
+		<Unit filename="/home/glenn/EXAMEN/keyValueDB/getSet.c">
 			<Option target="EXAMEN"/>
 		</Unit>
-		<Unit filename="/home/glenn/EXAMEN/kvdb.c">
+		<Unit filename="/home/glenn/EXAMEN/keyValueDB/kvdb.c">
 			<Option target="EXAMEN"/>
 		</Unit>
-		<Unit filename="/home/glenn/EXAMEN/kvdbFunctions.c">
+		<Unit filename="/home/glenn/EXAMEN/keyValueDB/kvdbFunctions.c">
 			<Option target="EXAMEN"/>
 		</Unit>
-		<Unit filename="/home/glenn/EXAMEN/kvh.h">
+		<Unit filename="/home/glenn/EXAMEN/keyValueDB/kvh.h">
 			<Option target="EXAMEN"/>
 		</Unit>
-		<Unit filename="/home/glenn/EXAMEN/CMakeLists.txt">
+		<Unit filename="/home/glenn/EXAMEN/keyValueDB/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

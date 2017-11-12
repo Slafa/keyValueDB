@@ -4,23 +4,26 @@
 
 #ifndef EXAMEN_KVH_H
 #define EXAMEN_KVH_H
+
 #define getType(a)                              \
                     _Generic((a),               \
                     NODE*: getTypeNode,         \
                     char*: getTypeString)(a)
+
 ///params (b) = any int value if expected int or any string value for string.
-#define getValue(a,b)                           \
+#define getValue(a, b)                           \
                     _Generic((b),               \
                     char*: getString,           \
                     int: getInt)(a,b)
 
-#define setValue(a,b,c)                         \
+#define setValue(a, b, c)                         \
                     _Generic((a),               \
                     char*: setString,           \
                     ULONG: setInt)(a,b,c)
 
-
 typedef unsigned long ULONG;
+
+
 typedef enum {
     false,
     true
@@ -43,13 +46,13 @@ typedef struct NODE {
     struct NODE *pnNodes; //pointer to subnodes(catalogs)
 } NODE;
 
-typedef void (*callBack) (NODE *, char *);
+typedef void (*callBack)(NODE *, char *);
 
 NODE *root;
 
-nodeType setInt(ULONG intValue, char *keyValue, NODE * this);
+nodeType setInt(ULONG intValue, char *keyValue, NODE *this);
 
-nodeType setString(char *value, char * keyValue, NODE *this);
+nodeType setString(char *value, char *keyValue, NODE *this);
 
 struct NODE *createNode(char *name);
 
@@ -57,13 +60,13 @@ void setupNodes(char **pArr, int size, NODE *root);
 
 void printAllNodes(NODE *this, char *folderName);
 
-ULONG getInt(char * keyValue, int nodeType);
+ULONG getInt(char *keyValue, int nodeType);
 
-char * getString(char * keyValue, char * nodeType);
+char *getString(char *keyValue, char *nodeType);
 
 NODE *getNode(char *keyValue, NODE *root);
 
-void test();
+void start();
 
 bool delete(char *keyValue);
 
@@ -83,9 +86,7 @@ char *getText(char *value, char *language);
 
 NODE *findValue(char *valueName, char *language, NODE *this);
 
-void enumerate(char * keyName, callBack callBackFunk);
-
-
+void enumerate(char *keyName, callBack callBackFunk);
 
 
 #endif //EXAMEN_KVH_H

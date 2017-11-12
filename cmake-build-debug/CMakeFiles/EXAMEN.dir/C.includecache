@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/glenn/EXAMEN/getSet.c
+/home/glenn/EXAMEN/keyValueDB/getSet.c
 string.h
 -
 stdlib.h
@@ -14,17 +14,15 @@ stdlib.h
 stdio.h
 -
 kvh.h
-/home/glenn/EXAMEN/kvh.h
+/home/glenn/EXAMEN/keyValueDB/kvh.h
 
-/home/glenn/EXAMEN/kvdb.c
+/home/glenn/EXAMEN/keyValueDB/kvdb.c
 stdio.h
 -
-stdlib.h
--
 kvh.h
-/home/glenn/EXAMEN/kvh.h
+/home/glenn/EXAMEN/keyValueDB/kvh.h
 
-/home/glenn/EXAMEN/kvdbFunctions.c
+/home/glenn/EXAMEN/keyValueDB/kvdbFunctions.c
 string.h
 -
 stdlib.h
@@ -32,7 +30,7 @@ stdlib.h
 stdio.h
 -
 kvh.h
-/home/glenn/EXAMEN/kvh.h
+/home/glenn/EXAMEN/keyValueDB/kvh.h
 
-/home/glenn/EXAMEN/kvh.h
+/home/glenn/EXAMEN/keyValueDB/kvh.h
 

@@ -27,7 +27,7 @@ nodeType getTypeString(char *keyValue) {
                     continue;
                 }
             }
-            if (strcmp(thisNode->pszName,word) != 0 ){
+            if (strcmp(thisNode->pszName, word) != 0) {
                 return nodeDontExist;
             }
         }
@@ -38,8 +38,8 @@ nodeType getTypeString(char *keyValue) {
     return getType(thisNode);
 }
 
-nodeType getTypeNode(NODE * thisNode){
-         if (thisNode == NULL) {
+nodeType getTypeNode(NODE *thisNode) {
+    if (thisNode == NULL) {
         return nodeDontExist;
 
     } else if (thisNode->pnNodeCounter > -1) {
@@ -53,104 +53,109 @@ nodeType getTypeNode(NODE * thisNode){
     }
 }
 
-nodeType setInt(ULONG intValue, char *keyValue, NODE * this) {
-
+nodeType setInt(ULONG value, char *keyValue, NODE *this) {
+    char *val = NULL;
     NODE *node;
-    if (this == NULL){
+    if (this == NULL) {
         node = getNode(keyValue, root);
-    }else{
+    } else {
         node = this;
     }
 
-    if(node == NULL){
-        char * nodeToCreate = {keyValue};
-        setupNodes(&nodeToCreate,1,root);
+    if (node == NULL) {
+        const int n = snprintf(NULL, 0, "%lu", value);
+        char temp[n + 1];
+        snprintf(temp, n + 1, "%lu", value);
+
+        val = calloc(1, (sizeof(char) * (strlen(keyValue) + strlen(temp) + 6)));
+        strcat(val, keyValue);
+        strcat(val, " = ");
+        strcat(val, temp);
+
+        setupNodes(&val, 1, root);
         node = getNode(keyValue, root);
-    }
-    else if(getType(node) == stringValue){
+
+    } else if (getType(node) == stringValue) {
         return wrongType;
     }
-    node->ulIntVal = intValue;
+    node->ulIntVal = value;
 }
 
-nodeType setString(char *value, char * keyValue, NODE *this) {
 
+nodeType setString(char *value, char *keyValue, NODE *this) {
+    char *val = NULL;
     NODE *node;
-    if (this == NULL){
+    if (this == NULL) {
         node = getNode(keyValue, root);
-    }else{
+    } else {
         node = this;
     }
 
-    if(node == NULL){
-        char val[strlen(keyValue)+ strlen(value)+6];
-        strcat(val,keyValue);
-        strcat(val," = \"");
-        strcat(val,value);
-        strcat(val,"\"");
-        puts(val);
-        char * nodeToCreate = {val};
-        setupNodes(&nodeToCreate,1,root);
+    if (node == NULL) {
+        val = calloc(1, sizeof(char) * (strlen(keyValue) + strlen(value) + 6));
+        strcat(val, keyValue);
+        strcat(val, " = \"");
+        strcat(val, value);
+        strcat(val, "\"");
+
+        setupNodes(&val, 1, root);
         node = getNode(keyValue, root);
-    }
-    else if(this == NULL && getType(node) != stringValue){
+    } else if (this == NULL && getType(node) != stringValue) {
         return wrongType;
     }
 
 
     if (node->pszString == NULL) {
-        node->pszString = malloc(strlen(value)+1);
-    }else{
-        node->pszString = realloc(node->pszString,strlen(value) + 1);
+        node->pszString = calloc(1, sizeof(char) * (strlen(value) + 1));
+    } else {
+        node->pszString = realloc(node->pszString, sizeof(char) * (strlen(value) + 1));
 
     }
     strcpy(node->pszString, value);
+    if (val != NULL) {
+        free(val);
+    }
+
 }
 
-char * getText(char * value, char * language){
-NODE * node = findValue(value, language,root);
-    if(node != NULL){
+char *getText(char *value, char *language) {
+    NODE *node = findValue(value, language, root);
+    if (node != NULL) {
         return node->pszString;
-    }else{
+    } else {
         return NULL;
     }
 }
+
 ///param (blank) =  any string value
-char * getString (char * keyValue, char * blank){
+char *getString(char *keyValue, char *blank) {
     nodeType type = getType(keyValue);
 
-    if (type == stringValue){
-        return getNode(keyValue,root)->pszString;
+    if (type == stringValue) {
+        return getNode(keyValue, root)->pszString;
     }
     return NULL;
 }
+
 ///param (blank) =  any int value
-ULONG getInt(char * keyValue, int blank){
+ULONG getInt(char *keyValue, int blank) {
 
     nodeType type = getType(keyValue);
-    if (type == intValue){
+    if (type == intValue) {
         return getNode(keyValue, root)->ulIntVal;
     }
 }
 
- /*void * getValue(*char keyValue){
-    nodeType type = getType(keyValue);
-    if(type == stringValue){
-        return getString(keyValue);
-    }else if(type == intValue){
-        return getInt(keyValue);
-    } else return (void *) type;
-}*/
 
-NODE *getNode(char* keyValue, NODE * root){
-    if(getType(keyValue) == nodeDontExist ){
+NODE *getNode(char *keyValue, NODE *root) {
+    if (getType(keyValue) == nodeDontExist) {
         return NULL;
     }
     char keyValDup[strlen(keyValue + 1)];
     char *delimeter = ". ";
     char *word;
     int counter = 0;
-    NODE * thisNode = root;
+    NODE *thisNode = root;
 
     strcpy(keyValDup, keyValue);
     word = strtok(keyValDup, delimeter);
@@ -172,24 +177,24 @@ NODE *getNode(char* keyValue, NODE * root){
 
 ///var litt usikker på hva som skulle være poenget med denne funksjonen og hvordan den skulle virke.
 ///valgte derfor å printe ut alle undernodene og verdien.
-void enumerate(char * keyName, callBack callbackFunc){
-    char * fullPath = calloc(1, sizeof(char) * strlen(keyName+1));
-    strcpy(fullPath,keyName);
+void enumerate(char *keyName, callBack callbackFunc) {
+    char *fullPath = calloc(1, sizeof(char) * strlen(keyName + 1));
+    strcpy(fullPath, keyName);
 
-    if(fullPath != NULL && fullPath[strlen(fullPath)-1] =='*') {
-        fullPath[strlen(fullPath)-1] = '\0';
-        if(fullPath[strlen(fullPath)-1] =='.'){
-            fullPath[strlen(fullPath)-1] = '\0';
-        }else{
+    if (fullPath != NULL && fullPath[strlen(fullPath) - 1] == '*') {
+        fullPath[strlen(fullPath) - 1] = '\0';
+        if (fullPath[strlen(fullPath) - 1] == '.') {
+            fullPath[strlen(fullPath) - 1] = '\0';
+        } else {
             return;
         }
     }
 
-    NODE * node = getNode(fullPath,root);
+    NODE *node = getNode(fullPath, root);
     if (node != NULL) {
         for (int i = 0; i <= node->pnNodeCounter; ++i) {
 
-            callbackFunc(&node->pnNodes[i],node->pnNodes[i].pszName);
+            callbackFunc(&node->pnNodes[i], node->pnNodes[i].pszName);
         }
     }
 }
